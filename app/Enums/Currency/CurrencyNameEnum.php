@@ -10,4 +10,11 @@ enum CurrencyNameEnum: string
 
     case Usd = 'usd';
     case Rub = 'rub';
+
+    public static function getAvailable(): array
+    {
+        return [
+            self::Rub->value
+        ];
+    }
 }

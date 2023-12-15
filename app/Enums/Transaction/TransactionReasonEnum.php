@@ -4,10 +4,10 @@ namespace App\Enums\Transaction;
 
 use App\Enums\EnumJsonSerializableTrait;
 
-enum TransactionTypeEnum: string
+enum TransactionReasonEnum: string
 {
     use EnumJsonSerializableTrait;
 
-    case Debit = 'debit';
-    case Credit = 'credit';
+    case Stock = 'stock';
+    case Refund = 'refund';
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models\Transaction;
 
+use App\Enums\Transaction\TransactionReasonEnum;
 use App\Enums\Transaction\TransactionTypeEnum;
 use App\Models\Currency\Currency;
 use App\Models\User;
@@ -16,6 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int $user_id;
  * @property int $currency_id;
  * @property TransactionTypeEnum $type;
+ * @property TransactionReasonEnum $reason;
  * @property int $amount;
  * @property Carbon $created_at;
  * @property Carbon|null $updated_at;
@@ -36,7 +38,8 @@ class Transaction extends Model
      * @var array
      */
     protected $casts = [
-        'type' => TransactionTypeEnum::class
+        'type' => TransactionTypeEnum::class,
+        'reason' => TransactionReasonEnum::class
     ];
 
     public function user(): BelongsTo

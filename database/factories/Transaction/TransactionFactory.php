@@ -2,6 +2,7 @@
 
 namespace Database\Factories\Transaction;
 
+use App\Enums\Transaction\TransactionReasonEnum;
 use App\Enums\Transaction\TransactionTypeEnum;
 use App\Models\Transaction\Transaction;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -20,6 +21,7 @@ class TransactionFactory extends Factory
     {
         return [
             'type' => fake()->randomElement(TransactionTypeEnum::cases()),
+            'reason' => fake()->randomElement(TransactionReasonEnum::cases()),
             'amount' => fake()->numberBetween(1, 10)
         ];
     }
