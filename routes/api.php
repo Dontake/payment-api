@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\V1\Auth\AuthController;
+use App\Http\Controllers\V1\User\UserBalanceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +16,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:sanctum')->group(function () {
+
+    Route::prefix('user')->name('user.')->group(function () {
+
+        Route::prefix('balance')->name('balance.')->group(function () {
+
+            Route::get('/{walletId}', [UserBalanceController::class, 'info'])->name('show');
+            Route::put('/{walletId}', [UserBalanceController::class, 'update'])->name('update');
+
+        });
+
+    });
+
+    Route::post('auth/logout', [AuthController::class, 'logout'])->name('auth.logout');
 });
+
+Route::post('auth/login', [AuthController::class, 'login'])->name('auth.login');
