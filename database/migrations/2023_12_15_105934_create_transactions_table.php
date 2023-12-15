@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('currency_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
 
             $table->enum('type', TransactionTypeEnum::values());
-            $table->integer('amount');
+            $table->unsignedInteger('amount');
 
             $table->timestamps();
             $table->softDeletes();

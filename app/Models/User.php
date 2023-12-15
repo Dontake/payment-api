@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Transaction\Transaction;
 use App\Models\Wallet\Wallet;
 use Carbon\Carbon;
+use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;

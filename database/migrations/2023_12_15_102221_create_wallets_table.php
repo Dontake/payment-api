@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('wallets', function (Blueprint $table) {
             $table->id();
-            $table->integer('balance');
+            $table->unsignedInteger('balance');
             $table->timestamps();
             $table->softDeletes();
         });
