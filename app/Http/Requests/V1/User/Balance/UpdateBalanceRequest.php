@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Requests\V1\User\Balance;
 
 use App\Enums\Currency\CurrencyNameEnum;

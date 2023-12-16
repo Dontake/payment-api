@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Enums\Transaction\TransactionReasonEnum;
 use App\Enums\Transaction\TransactionTypeEnum;
 use Illuminate\Database\Migrations\Migration;

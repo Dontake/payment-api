@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Services\Balance;
 
 use App\Enitites\Transaction\TransactionData;
@@ -30,9 +32,10 @@ class BalanceService implements BalanceServiceInterface
     {
         Cache::lock($data->userId . $walletId)->get(function () use ($walletId, $data) {
             $wallet = WalletRepository::find($walletId);
+            $arrayData = $data->toArray();
 
             if ($this->checkBalance($wallet->balance, $data)) {
-                Log::alert('Transaction fail! With data:', $data->toArray());
+                Log::alert('Transaction fail! With data:', $arrayData);
                 throw new InsufficientFundsException();
             }
 
@@ -41,7 +44,7 @@ class BalanceService implements BalanceServiceInterface
                 TransactionRepository::create($data);
             });
 
-            Log::info('Transaction success! With data:', $data->toArray());
+            Log::info('Transaction success! With data:', $arrayData);
         });
     }
 

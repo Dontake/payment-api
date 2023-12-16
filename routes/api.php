@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Http\Controllers\V1\Auth\AuthController;
 use App\Http\Controllers\V1\User\UserBalanceController;
 use Illuminate\Http\Request;
