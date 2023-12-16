@@ -18,6 +18,9 @@ alias sail='vendor/bin/sail'
 ````
 sail up
 ````
+````
+docker exec -it payment-api-laravel.test-1 bash
+````
 
 #### Seed database
 ````
@@ -41,4 +44,14 @@ GET /api/user/balance/{walletId}
 #### Update balance
 ````
 PUT /api/user/balance/{walletId}
+````
+
+#### Sync currency rates
+````
+php artisan app:sync-currency-rate
+````
+
+#### Get refund sum for last week
+````
+php artisan app:get-refund-sum
 ````

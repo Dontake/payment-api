@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Repository\Currency;
 
 use App\Enums\Currency\CurrencyNameEnum;

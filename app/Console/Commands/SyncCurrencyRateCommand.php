@@ -1,13 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Console\Commands;
 
-use App\Enums\Transaction\TransactionReasonEnum;
 use App\Jobs\SyncCurrencyRateJob;
-use App\Models\Transaction\Transaction;
-use Carbon\Carbon;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\DB;
 
 class SyncCurrencyRateCommand extends Command
 {

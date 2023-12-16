@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Exceptions\Api\V1;
 
 class InsufficientFundsException extends BaseException

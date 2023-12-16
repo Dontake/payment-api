@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Jobs;
 
 use App\Exceptions\ExternalServices\CurrencyRateSyncException;
@@ -13,14 +15,6 @@ use Illuminate\Queue\SerializesModels;
 class SyncCurrencyRateJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-
-    /**
-     * Create a new job instance.
-     */
-    public function __construct()
-    {
-        //
-    }
 
     /**
      * Execute the job.

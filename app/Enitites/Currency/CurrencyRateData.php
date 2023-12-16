@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Enitites\Currency;
 
 use Spatie\LaravelData\Data;
